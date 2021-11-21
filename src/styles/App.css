@@ -1,0 +1,160 @@
+.calculator {
+    border: 3px solid rgb(107, 60, 60);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    
+  }
+  .header{
+    padding-left: 20px;
+  }
+  
+  .calculatorScreen {
+    width: 95%;
+    font-size: 5rem;
+    height: 80px;
+    border: solid 3px rgb(219, 208, 208);
+    border-radius: 5px;
+    background-color: #252525;
+    color: #fff;
+    text-align: right;
+    margin: 10px;
+  }
+  
+  button {
+    height: 60px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: transparent;
+    font-size: 2rem;
+    color: #333;
+    background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+    text-shadow: 0 1px rgba(255,255,255,.4);
+  }
+  
+  button:hover {
+    background-color: #eaeaea;
+  }
+  
+  .ac:hover {
+    background-color: #f17377;
+  }
+    
+  .equal:hover {
+    background-color: #4e9ed4;
+  }
+  
+  .calculatorKeys {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas: 
+      ". ms mc mr m-plus m-minus"
+      "ac seven eight nine percent square-root"
+      "c four five six multiply divide"
+      ". one two three add subtract"
+      ". zero decimal sign equal equal";
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  .ms{
+    grid-area: ms;
+  }
+  .mc{
+    grid-area: mc;
+  }
+  .mr{
+    grid-area: mr;
+  }
+  .m-plus{
+    grid-area: m-plus;
+  }
+  .m-minus{
+    grid-area: m-minus;
+  }
+  .ac{
+    grid-area: ac;
+  }
+  .seven{
+    grid-area: seven;
+  }
+  .eight{
+    grid-area: eight;
+  }
+  .nine{
+    grid-area: nine;
+  }
+  .percent{
+    grid-area: percent;
+  }
+  .square-root{
+    grid-area: square-root;
+  }
+  .c{
+    grid-area: c;
+  }
+  .four{
+    grid-area: four;
+  }
+  .five{
+    grid-area: five;
+  }
+  .six{
+    grid-area: six;
+  }
+  .multiply{
+    grid-area: multiply;
+  }
+  .divide{
+    grid-area: divide;
+  }
+  .one{
+    grid-area: one;
+  }
+  .two{
+    grid-area: two;
+  }
+  .three{
+    grid-area: three;
+  }
+  .add{
+    grid-area: add;
+  }
+  .subtract{
+    grid-area: subtract;
+  }
+  .zero{
+    grid-area: zero;
+  }
+  .decimal{
+    grid-area: decimal;
+  }
+  .sign{
+    grid-area: sign;
+  }
+  .equal{
+    grid-area: equal;
+    background-color: #2e86c0;
+    border-color: #337cac;
+    color: #fff;
+    height: 100%;
+  }
+  .ac, .c{
+    background-color: #f0595f;
+    border-color: #b0353a;
+    color: #fff;
+  }
+  .ms,.mc, .mr, .m-plus, .m-minus{
+    background-color: hsl(66, 83%, 65%);
+    border-color: hsl(71, 54%, 45%);   
+  }
+  .percent, .square-root,.multiply, .divide, .add, .subtract{
+    background-color: orange;
+    border-color: hsl(41, 85%, 47%);
+    
+  }
