@@ -8,8 +8,7 @@ function App() {
     <div className="calculator">
         <Header/>
         <Display />
-        
-      
+            
     </div>
   );
 

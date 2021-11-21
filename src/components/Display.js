@@ -84,17 +84,8 @@ function Display() {
     }
     function converseNum() {
         let newNum = parseFloat(displayValue);
-
-        if (isSecondNum === true) {
-            let newDisplay = "-"
-            setDisplayValue(newDisplay)
-            setIsSecondNum(false)
-        } else {
             let result = newNum * (-1);
             setDisplayValue(result.toString())
-        }
-
-
     }
     function saveMemory() {
         let newNum = parseFloat(displayValue);
@@ -127,14 +118,12 @@ function Display() {
         } else if (operator === "Multiply") {
             result = firstNum * secondNum
         } else if (operator === "Divide") {
-            result = firstNum / secondNum
-        } else if (operator === "Percent") {
-            result = firstNum / 100
-            setDisplayValue(result.toString())
-        } else if (operator === "Square Root") {
-            result = Math.sqrt(firstNum)
-            setDisplayValue(result.toString())
-        }
+            if(secondNum!==0){
+                result = firstNum / secondNum
+            }else{
+                result = 0
+            }           
+        } 
         else {
             return firstNum
         }
