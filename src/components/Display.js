@@ -30,30 +30,6 @@ function Display() {
         setDisplayValue(newValue);
     }
 
-    function handleDecimal(dot) {
-        if (isSecondNum === true) {
-            let newDisplay = "0."
-            setDisplayValue(newDisplay)
-            setIsSecondNum(false)
-
-        } else {
-            if (displayValue.includes(dot)) {
-                setDisplayValue(displayValue)
-            } else {
-                setDisplayValue(displayValue + dot)
-            }
-        }
-    }
-    function resetAll() {
-        setDisplayValue("0");
-        setIsSecondNum(false);
-        setOperator(null);
-        setFirstNum(0);
-    }
-    function clearCurrentDisplay() {
-        setDisplayValue("0");
-    }
-
     function handleOperator(newOperator) {
         let newNum = parseFloat(displayValue)
         if (firstNum === 0 && !isNaN(newNum)) {
@@ -69,6 +45,55 @@ function Display() {
         setIsSecondNum(true)
 
     }
+    
+    function handleDecimal(dot) {
+        if (isSecondNum === true) {
+            let newDisplay = "0."
+            setDisplayValue(newDisplay)
+            setIsSecondNum(false)
+
+        } else {
+            if (displayValue.includes(dot)) {
+                setDisplayValue(displayValue)
+            } else {
+                setDisplayValue(displayValue + dot)
+            }
+        }
+    }
+
+    function handleEqual(firstNum, operator, secondNum) {
+        let result
+        if (operator === "Add") {
+            result = firstNum + secondNum
+        } else if (operator === "Subtract") {
+            result = firstNum - secondNum
+        } else if (operator === "Multiply") {
+            result = firstNum * secondNum
+        } else if (operator === "Divide") {
+            if(secondNum!==0){
+                result = firstNum / secondNum
+            }else{
+                result = 0
+            }           
+        } 
+        else {
+            return firstNum
+        }
+        return result;
+    }
+
+    function resetAll() {
+        setDisplayValue("0");
+        setIsSecondNum(false);
+        setOperator(null);
+        setFirstNum(0);
+    }
+
+    function clearCurrentDisplay() {
+        setDisplayValue("0");
+    }
+
+    
     function handlePercent() {
         let newNum = parseFloat(displayValue);
         let result = newNum / 100;
@@ -109,26 +134,7 @@ function Display() {
         setMemory(newNum)
     }
 
-    function handleEqual(firstNum, operator, secondNum) {
-        let result
-        if (operator === "Add") {
-            result = firstNum + secondNum
-        } else if (operator === "Subtract") {
-            result = firstNum - secondNum
-        } else if (operator === "Multiply") {
-            result = firstNum * secondNum
-        } else if (operator === "Divide") {
-            if(secondNum!==0){
-                result = firstNum / secondNum
-            }else{
-                result = 0
-            }           
-        } 
-        else {
-            return firstNum
-        }
-        return result;
-    }
+    
 
     function passValue(value) {
         switch (value) {
