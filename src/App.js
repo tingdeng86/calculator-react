@@ -1,9 +1,9 @@
 
-import Display from "./Display";
-import Header from "./Header";
-import '../styles/App.css';
+import Display from "./components/Display";
+import Header from "./components/Header";
+import './styles/App.css';
 import { useState } from "react"
-import Button from "./Button";
+import Button from "./components/Button";
 
 function App() {
   const [displayValue, setDisplayValue] = useState("0");
